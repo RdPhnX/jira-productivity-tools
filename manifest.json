@@ -1,0 +1,27 @@
+{
+  "name": "Jira Productivity Tools",
+  "version": "0.0.0.1",
+  "manifest_version": 3,
+  "description": "An extension to improve productivity in Jira Cloud",
+  "icons": {
+    "128": "/icons/jpt-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "./content-scripts/open-jql-btn.js",
+        "./content-scripts/copy-issue-key-csv.js"
+      ],
+      "matches": [
+        "https://*.atlassian.net/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "clipboardWrite"
+  ]
+}
